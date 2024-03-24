@@ -3,9 +3,9 @@ import inquirer from "inquirer";
 
 //computer generated number
 // const guessingNumber = Math.floor(Math.random() * 10 + 1);
-let numTries = 10;
+let numTries = 5;
 
-//user input number 
+//user input number
 while(numTries>0){
 const guessingNumber = Math.floor(Math.random() * 10 + 1);
 let userInput = await inquirer.prompt([{
@@ -25,7 +25,11 @@ if(userInput.userNumber === guessingNumber){
     }else{
         console.log("Think Lower");
          }
-    console.log(`You have ${numTries -1} left`);
+    if(numTries>1){
+        console.log(`You have ${numTries -1} tries left`);
+    }else{
+        console.log("Game Over");
+    }   
 }
 numTries--;
 };
