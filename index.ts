@@ -16,15 +16,10 @@ let userInput = await inquirer.prompt([{
 
 
 if(userInput.userNumber === guessingNumber){
-    console.log("You Guessed Right ,\nGame Over")
+    console.log("You Guessed it Right ,\nGame Over")
     numTries = 0;
 }else{
     console.log(`You Guessed it wrong the correct number is : ${guessingNumber}`);
-    if(guessingNumber>userInput.userNumber){
-        console.log("Think Higher");
-    }else{
-        console.log("Think Lower");
-         }
     if(numTries>1){
         console.log(`You have ${numTries -1} tries left`);
     }else{
